@@ -202,7 +202,13 @@ iframe{
 <h1> DACAMPONG'S <br> Shopping Center</h1>
 <p>
     "Dacampong Shopping Center: Your one-stop shop for quality products at affordable prices! From everyday essentials to unique finds, we’ve got everything you need. Experience convenience and variety with just a click!" <br>
-    <button>Shop Now</button></p>
+     <button onclick="playAudio()">Play..</button>
+  <audio id="musicPlayer">
+    <source src="blackpink-ice-cream-with-selena-gomez-m-v-128-ytshorts.savetube.me.mp3" type="audio/mpeg">
+ 
+  </audio>
+
+</p>
 </div>
 <div class="heading">
     <h1>Shoes For You!</h1>
@@ -255,15 +261,16 @@ Your trusted shopping center world wide <br>
 
 
 
-
-
-
-
-<audio autoplay>
-  <source src="blackpink-ice-cream-with-selena-gomez-m-v-128-ytshorts.savetube.me.mp3">
-  Your browser does not support the audio element.
-</audio>
         
     </div>
+
+     <script>
+    function playAudio() {
+      const audio = document.getElementById('musicPlayer');
+      audio.play().catch(error => {
+        console.log('Error playing audio:', error);
+      });
+    }
+  </script>
 </body>
 </html>
