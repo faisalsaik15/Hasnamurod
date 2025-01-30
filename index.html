@@ -68,7 +68,7 @@
             padding: 20px;
         }
 
-       .hero h1{
+        .hero h1 {
             font-family: 'Courier New', Courier, monospace;
             font-size: 48px;
             overflow: hidden;
@@ -87,11 +87,6 @@
             }
         }
 
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
         @keyframes blink {
             50% {
                 border-color: transparent;
@@ -145,7 +140,7 @@
         .boxcontainer {
             grid-area: boxcontainer;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 20px;
             justify-items: center;
@@ -161,20 +156,19 @@
             padding: 20px;
             box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-              animation-name: appear;
-           animation-timeline: view();
-           animation-timing-function: linear;
-           animation-fill-mode: both;
-           animation-range: cover 25% cover 75%;
+            animation-name: appear;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
         }
-                @keyframes appear {
+
+        @keyframes appear {
             0% {
-               filter: blur(20px);
-               scale: 0.5;
+                filter: blur(20px);
+                scale: 0.5;
             }
             50% {
-               filter: blur(0px);
-               scale: 1;
+                filter: blur(0px);
+                scale: 1;
             }
         }
 
@@ -231,6 +225,71 @@
             width: 90%;
             max-width: 600px;
         }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .boxcontainer {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .box {
+                max-width: 250px;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .nav a {
+                padding: 8px 12px;
+            }
+
+            .hero button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .boxcontainer {
+                grid-template-columns: 1fr;
+            }
+
+            .box {
+                max-width: 100%;
+            }
+
+            .nav a {
+                font-size: 0.9rem;
+            }
+
+            .hero button {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+
+            .footer p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -256,7 +315,6 @@
         </div>
 
         <div class="boxcontainer">
-            
             <div class="box">
                 <h2>Price: $299</h2>
                 <img src="./816psbQ1E4L._AC_UL1500_-removebg-preview.png" alt="Shoe">
@@ -274,8 +332,6 @@
                 <img src="./81DJ2qjUv2S._AC_SL1500_-removebg-preview.png" alt="Shoe">
                 <button>Order</button>
             </div>
-
-        
 
             <div class="box">
                 <h2>Price: $299</h2>
