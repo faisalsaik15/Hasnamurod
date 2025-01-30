@@ -161,6 +161,21 @@
             padding: 20px;
             box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+              animation-name: appear;
+           animation-timeline: view();
+           animation-timing-function: linear;
+           animation-fill-mode: both;
+           animation-range: cover 25% cover 75%;
+        }
+                @keyframes appear {
+            0% {
+               filter: blur(20px);
+               scale: 0.5;
+            }
+            50% {
+               filter: blur(0px);
+               scale: 1;
+            }
         }
 
         .box:hover {
