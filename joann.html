@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .main {
+            display: grid;
+            grid-template-areas:
+                "navbar"
+                "hero"
+                "boxcontainer"
+                "footer";
+            grid-template-rows: 50px auto auto auto;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: pink;
+            grid-area: navbar;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .hero {
+            background-color: rgb(211, 127, 141);
+            grid-area: hero;
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 20px;
+        }
+        .boxcontainer {
+            background-color: rgb(221, 160, 221);
+            grid-area: boxcontainer;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .footer {
+            background-color: rosybrown;
+            grid-area: footer;
+            padding: 20px;
+            text-align: center;
+        }
+        .box {
+            width: 100%;
+            height: auto;
+            background-color: pink;
+            padding: 20px;
+            border-radius: 24px;
+            box-shadow: 7px 7px 7px 7px palevioletred;
+            transition: transform 0.3s ease-in-out;
+        }
+        .box:hover {
+            background-color: rgb(171, 97, 245);
+            transform: scale(1.05);
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        a {
+            transition: all 0.5s ease-in-out;
+            text-decoration: none;
+            padding: 10px;
+        }
+        a:hover {
+            background-color: plum;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .boxcontainer {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar"> 
+            <a href="">About us</a>
+            <a href="">Academic</a>
+            <a href="">Admission</a>
+            <a href="">Student Portal</a>
+            <a href="">News & Event</a>
+        </div>
+        <div class="hero">
+            <h1>IBN TAIMIYAH FOUNDATION <br> ACADEMY INC.</h1>
+            <p>Crossing Simuay Sultan Kudarat Mag. Del norte</p>
+            <p>Assalamo Alaykom Wa Rahmatullahi Wa barakatuhu! <br>
+                When you think you are at the end of something else, this institution has remained true to its aim "Dunya-Akhirat" Education, <br>
+                but we are starting now with new and better direction that shall always embrace and adopt with current innovation, new technology and appropriate methods to <br>
+                serve better our valued clientele. <br>
+            </p>
+        </div>
+        <div class="boxcontainer">
+            <div class="box">
+                <h2>MISSION</h2>
+                <p>Ibn Taimiyah Foundation Academy aims to produce enlightened, competitive, and well-balanced graduates committed to promoting Islamic culture and becoming proactive members of society through acquisition of holistic knowledge, appropriate skills, and worthy attitudes and values.</p>
+            </div>
+            <div class="box">
+                <h2>VISION</h2>
+                <p>Ibn Taimiyah Foundation Academy envisions to be a leading Muslim private educational institution in the delivery of quality dunya-akhirat education and a potential partner in nation-building.</p>
+            </div>
+            <div class="box">
+                <h2>GOALS</h2>
+                <p>1. To role model an Islamically-oriented school administration and management;</p>
+                <p>2. To provide quality dunya-akhirat education from elementary to high school levels;</p>
+                <p>3. To develop the pupils and students upholding Tawhidic principles and culture of Islam;</p>
+                <p>4. To develop and sustain capabilities of school administration, teaching, and non-teaching personnel;</p>
+                <p>5. To deliver relevant educational programs and services to all pupils, students, parents, and other stakeholders;</p>
+                <p>6. To establish and strengthen linkages and networks with government agencies and non-government organizations and partners for academic and infrastructure development;</p>
+                <p>7. To foster unity and cooperation among other schools and institutions for the advancement of Bangsamoro education.</p>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>

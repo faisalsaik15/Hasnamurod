@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBN TAIMIYAH FOUNDATION ACADEMY INC.</title>
+<style>
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Grid Layout */
+.main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-areas:
+        "navbar"
+        "hero"
+        "boxcontainer"
+        "footer";
+}
+
+/* Navbar */
+.navbar {
+    grid-area: navbar;
+    background-color: rgb(240, 233, 177);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar h3 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    color: rgb(68, 60, 33);
+    font-size: 1.1rem;
+}
+
+.navbar a:hover {
+    transform: scale(1.1);
+    color: cadetblue;
+}
+
+/* Hero Section */
+.hero {
+    grid-area: hero;
+    background-color: lemonchiffon;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: rgb(68, 60, 33);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Box Container */
+.boxcontainer {
+    grid-area: boxcontainer;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: lemonchiffon;
+    text-align: center;
+}
+
+.box {
+    background-color: rgb(177, 150, 91);
+    border: solid rgb(97, 58, 33);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    border-radius: 24px;
+    box-shadow: 7px 7px 7px papayawhip;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    background-color: rgb(248, 237, 132);
+    box-shadow: 10px -10px 15px rgb(255, 248, 175);
+    color: rgb(68, 59, 34);
+}
+
+.box h2 {
+    color: rgb(71, 46, 5);
+    font-size: 1.8rem;
+}
+
+.box p {
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: lemonchiffon;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .box {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .box h2 {
+        font-size: 1.5rem;
+    }
+    .box p {
+        font-size: 1rem;
+    }
+}
+</style>
+</head>
+<body>
+<div class="main">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h3>
+            <a href="#">About Us</a>
+            <a href="#">Academics</a>
+            <a href="#">Admissions</a>
+            <a href="#">Student Portal</a>
+            <a href="#">News & Events</a>
+        </h3>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>IBN TAIMIYAH FOUNDATION ACADEMY INC.</h1>
+        <p>
+            Assalamo Alaikom Wa Rahmatullahi Wa Barakatuho! <br><br>
+            When you think you are at the end of something, you are basically at the beginning of something else. This institution remains true to its aim:
+            <strong>"Dunya-Akhirat Education."</strong> We are now moving forward with a new and better direction, embracing current innovations, new technology,
+            and improved methods to better serve our valued clientele.<br><br>
+            Let us challenge ourselves to seek personal growth and help one another develop. Our institution thrives when we encourage each other to work hard
+            and exceed expectations, ensuring we continue our mandate to nurture and develop the next generation.<br><br>
+            The best is yet to come. Despite challenges, we are planting the seeds of hope to provide better learning experiences, opportunities, and the 
+            development of our students' full potential.<br><br>
+            ITFA's success is not just about being renowned but in producing God-fearing and empowered individuals who positively contribute to nation-building.<br><br>
+            Let's act today—together, let's weave the dream of the future.
+        </p>
+    </div>
+
+    <!-- Box Container -->
+    <div class="boxcontainer">
+        <div class="box">
+            <h2>MISSION</h2>
+            <p>
+                Ibn Taimiyah Foundation Academy aims to produce enlightened, competitive, and well-balanced graduates committed to promoting Islamic culture
+                and being proactive members of society through holistic knowledge, appropriate skills, and strong values.
+            </p>
+        </div>
+        <div class="box">
+            <h2>VISION</h2>
+            <p>
+                Ibn Taimiyah Foundation Academy envisions becoming a leading Muslim private educational institution delivering quality Dunya-Akhirat education
+                and serving as a potential partner in nation-building.
+            </p>
+        </div>
+        <div class="box">
+            <h2>GOALS</h2>
+            <p>
+                1. To serve as a role model for Islamically-oriented school administration and management.<br>
+                2. To provide quality Dunya-Akhirat education from elementary to high school levels.<br>
+                3. To instill Tawhidic principles and Islamic values in students.<br>
+                4. To develop and sustain the capabilities of school administrators, teachers, and staff.<br>
+                5. To deliver relevant educational programs and services to all stakeholders.<br>
+                6. To strengthen partnerships with government and non-government organizations for academic and infrastructure development.<br>
+                7. To foster unity and cooperation among schools and institutions for the advancement of Bangsamoro education.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Ibn Taimiyah Foundation Academy. All Rights Reserved.
+    </div>
+
+</div>
+</body>
+</html>
