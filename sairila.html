@@ -1,158 +1,193 @@
-<style> 
-    .main {
-        min-height: 100vh;
-        display: grid;
-        grid-template-rows: 60px auto auto 200px;
-        grid-template-areas: 
-            "navbar navbar navbar"
-            "hero hero hero"
-            "boxcontainer boxcontainer boxcontainer"
-            "footer footer footer";
-        text-align: center;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBN TAIMIYAH FOUNDATION ACADEMY INC.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .navbar {
-        grid-area: navbar;
-        background-color: goldenrod;
-        padding: 20px;
-    }
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-    .navbar a {
-        text-decoration: none;
-        margin: 10px;
-        font-size: 1.2rem;
-        display: inline-block;
-        transition: all 0.5s ease-in-out;
-    }
+        .main {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: 60px auto auto 150px;
+            grid-template-areas:
+                "navbar"
+                "hero"
+                "boxcontainer"
+                "footer";
+            text-align: center;
+        }
 
-    .hero {
-        grid-area: hero;
-        background-color: green;
-        padding: 20px;
-        color: white;
-    }
+        .navbar {
+            grid-area: navbar;
+            background-color: goldenrod;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .hero h1 {
-        font-size: 3rem;
-        text-shadow: 5px 5px 5px royalblue;
-    }
+        .menu-icon {
+            font-size: 1.8rem;
+            cursor: pointer;
+            display: none;
+        }
 
-    .boxcontainer {
-        grid-area: boxcontainer;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
-        padding: 20px;
-        background-color: darkcyan;
-    }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
 
-    .box {
-        background-color: rgb(68, 145, 68);
-        border: solid black;
-        padding: 20px;
-        box-sizing: border-box;
-        text-align: center;
-        transition: all 0.5s ease-in-out;
-        border-radius: 24px;
-        box-shadow: 5px 5px 10px royalblue;
-    }
+        .nav-links a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
 
-    .box:hover {
-        transform: scale(1.05);
-        background-color: rosybrown;
-    }
-
-    .footer {
-        grid-area: footer;
-        background-color: rgb(3, 99, 35);
-        color: white;
-        padding: 20px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .boxcontainer {
-            grid-template-columns: 1fr;
+        .hero {
+            grid-area: hero;
+            background-color: green;
+            padding: 30px;
+            color: white;
         }
 
         .hero h1 {
-            font-size: 2rem;
+            font-size: clamp(2rem, 5vw, 3rem);
+            text-shadow: 3px 3px 5px royalblue;
         }
 
-        .navbar a {
-            display: block;
-            margin: 5px 0;
+        .boxcontainer {
+            grid-area: boxcontainer;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: darkcyan;
         }
-    }
-</style>
+
+        .box {
+            background-color: rgb(68, 145, 68);
+            border: solid black;
+            padding: 20px;
+            box-shadow: 3px 3px 8px royalblue;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            background-color: rosybrown;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: rgb(3, 99, 35);
+            color: white;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: goldenrod;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .boxcontainer {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="main"> 
+    <div class="main">
         <div class="navbar">
-            <a href="">HOME</a>
-            <a href="">ABOUT US</a>
-            <a href="">ACADEMIC</a>
-            <a href="">ADMISSIONS</a>
-            <a href="">STUDENT PORTAL</a>
-            <a href="">NEWS&EVENTS</a>
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
+            <div class="nav-links">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT US</a>
+                <a href="#">ACADEMIC</a>
+                <a href="#">ADMISSIONS</a>
+                <a href="#">STUDENT PORTAL</a>
+                <a href="#">NEWS & EVENTS</a>
+            </div>
         </div>
-        <div class="hero" >
-            <h1>IBN TAIMIYAH FOUNDATION <br>ACADEMY INC.</h1>
-            <p>Assalamu alaykom Wa Rahmatullahi Wa Barakatuho! <br>
-                When you think you are at the end of something,you are basically at the beggining of something else. <br>
-                This institution has remained true its aim "Dunya-Akhirat Education, but we are starting now with new <br>
-                and better direction that shall always embrace and adapt with current innovation new technology and <br>
-                appropriate methods to serve better our valued clientle. <br>
+        
+        <div class="hero">
+            <h1>IBN TAIMIYAH FOUNDATION ACADEMY INC.</h1>
+            <p>Assalamo Alaikom Wa Rahmatullahi Wa Barakatuho!
 
-                To attain this, let us all challenge ourselves to look for own personal development and ways to help <br>
-                one other develop. Our institution will only be at its best if we continue to encourage each other,  <br>
-                challenge our own self to work hard and exceed the expectation placed upon us as a workface for us <br>
-                to continue our mandate to nurture and develop the new genaration. <br>
+                When you think you are at the end of something, you are basically at the beginning of something else. This institution remains true to its aim: "Dunya-Akhirat Education." We are now moving forward with a new and better direction, embracing current innovations, new technology, and improved methods to better serve our valued clientele.
                 
-                The best is yet to come,but we are little by little turning our vision into action and positively this year <br>
-                we are planting a good seed of hope that despite this pandemic, we can provide better learning experience,   <br>
-                oppotunities and develop potentional to acquire good and quality education. <br>
-
-                ITFA will not be great by simply being renowned, its success is producing God fearing and empowered <br>
-                individual that could positively contribute to nation-building. <br>
-
-                Let's act today and,together lets weave the dream of the future. <br>
-            </p>
+                Let us challenge ourselves to seek personal growth and help one another develop. Our institution thrives when we encourage each other to work hard and exceed expectations, ensuring we continue our mandate to nurture and develop the next generation.
+                
+                The best is yet to come. Despite challenges, we are planting the seeds of hope to provide better learning experiences, opportunities, and the development of our students' full potential.
+                
+                ITFA's success is not just about being renowned but in producing God-fearing and empowered individuals who positively contribute to nation-building.
+                
+                Let's act today—together, let's weave the dream of the future.</p>
         </div>
+
         <div class="boxcontainer">
-            <div class="box"> 
-                
-                 <h2> MISSION</h2>
-                 <p>Ibn Taimyah Foundation Academy aims into produce enlightened,competitive
-                    and well balance graduates committed to promote Islamic culture
-                    and become proactive member of the society through acquisition
-                    of hollistic knowledge,appropriate skills,and worthy attitude and values.</p> 
-                
+            <div class="box">
+                <h2>MISSION</h2>
+                <p>Ibn Taimiyah Foundation Academy aims to produce enlightened, competitive, and well-balanced graduates committed to promoting Islamic culture and being proactive members of society through holistic knowledge, appropriate skills, and strong values.</p> 
             </div>
             <div class="box">
                 <h2>VISION</h2>
-                 <P>
-                     Ibn Taimyah Foundation Academy envision to be a leading Muslim private
-                     educational institution in the delivery of quality dunya-akhirat education
-                     and potentional partner in nation building.
-                 </P>
+                <p>Ibn Taimiyah Foundation Academy envisions becoming a leading Muslim private educational institution delivering quality Dunya-Akhirat education and serving as a potential partner in nation-building.</p>
             </div>
             <div class="box">
-                <h2> GOALS</h2>
-                <p>1.To role model an islamically-oriented school administration and management;<br>
-                   2.To provide quality dunya-akhirat education from elementary to highschool levels;<br>
-                   3.To develop the pupils and student uploading tawhidic principles and culture to islam;<br>
-                   4.To develop and sustain capabilities of school administrators,teaching and nonteaching personel;<br>
-                   5.To deliver relevant educational programs and services to all pupils,student,and other stakeholders;<br>
-                   6.To establish and strengthen linkages and network with goverment agencies and non-goverment organizations
-                     and partner for academic and infastracture development;<br>
-                   7.To foster unity and cooperation among other school and institutions for advancement of Bangsamoro education. <br>
+                <h2>GOALS</h2>
+                <p>
+                  1.   To serve as a role model for Islamically-oriented school administration and management. <br>
+                    2. To provide quality Dunya-Akhirat education from elementary to high school levels. <br>
+                    3. To instill Tawhidic principles and Islamic values in students. <br>
+                    4. To develop and sustain the capabilities of school administrators, teachers, and staff. <br>
+                    5. To deliver relevant educational programs and services to all stakeholders. <br>
+                    6. To strengthen partnerships with government and non-government organizations for academic and infrastructure development. <br>
+                    7. To foster unity and cooperation among schools and institutions for the advancement of Bangsamoro education.
                 </p>
             </div>
         </div>
+
         <div class="footer">
-           <h1> ALRIGHT RESERVE @2025</h1>
+            <h1>ALL RIGHTS RESERVED @2025</h1>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
